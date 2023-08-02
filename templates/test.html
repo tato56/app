@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+</head>
+<body>
+    <h1>Меню</h1>
+    {% for item in items %}
+    <div class="item" data-name="{{ item.name }}" data-price="{{ item.price }}">
+        <h3>{{ item.name }} - {{ item.price }} руб.</h3>
+        <img src="{{ item.image_url }}" alt="{{ item.name }}">
+        <button class="add-to-cart">Добавить в корзину</button>
+    </div>
+    {% endfor %}
+    <form id="cart-form" action="https://training-one-bot.ru/shop">
+        <input type="hidden" id="cart-data" name="cart_data" value="">
+        <button type="submit">Перейти в корзину</button>
+    </form>
+	<script src="https://unpkg.com/swup@3"></script>
+    <script>
+		const swup = new Swup();
+        const items = document.querySelectorAll('.item');
+        const cartForm = document.querySelector('#cart-form');
+        const cartDataInput = document.querySelector('#cart-data');
+
+        const cartData = [];
+
+        items.forEach((item) => {
+            const addToCartButton = item.querySelector('.add-to-cart');
+            const itemName = item.dataset.name;
+            const itemPrice = item.dataset.price;
+
+            addToCartButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                cartData.push({
+                    name: itemName,
+                    price: itemPrice
+                });
+                updateCartDataInput();
+            });
+        });
+
+        function updateCartDataInput() {
+            cartDataInput.value = JSON.stringify(cartData);
+        }
+
+        cartForm.addEventListener('submit', (event) => {
+            if (cartData.length === 0) {
+                event.preventDefault();
+                alert('Корзина пуста!');
+            }
+        });
+    </script>
+</body>
+</html>

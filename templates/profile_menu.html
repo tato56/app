@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>ONE-TRAINING</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/lib.css') }}">
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='photo/newlogo.png') }}">
+</head>
+<body> 
+        <div class="penis2">
+        <img src="{{ url_for('static', filename='photo/newlogo.png') }}" class="logo">
+        </div>
+        <div class="container">
+        <form method="post">
+          <div class="l">ФИО</div>
+            <div class="input-group">
+                <input type="text" class="input-area cv a1" required id="if" name="user_name2"/>
+                <label for="if" class="label">{{name2}}</label>
+            </div>
+
+            <div class="input-group">
+              <input type="text" class="input-area cv" required id="if" name="user_name1"/>
+              <label for="if" class="label">{{name1}}</label>
+          </div>
+          <div class="input-group">
+            <input type="text" class="input-area cv" required id="if" name="user_name3"/>
+            <label for="if" class="label">{{name3}}</label>
+        </div>
+        <!--
+        <div class="l">Ваш гендер</div>
+          <div class="fcheck">
+            <input class="c1" onclick="cv0()" type="radio" id="frd1" name="user_sex1" value="1">
+              <label for="frd1">
+                Мужской
+              </label>
+          </div>
+
+          <div class="fcheck">
+            <input class="c2"  onclick="cv1()" type="radio" id="frd2" name="user_sex2" value="2">
+              <label for="frd2">
+                Женский
+              </label>
+          </div>
+        -->
+        <div class="form-group">
+          <div class="l">Ваш гендер</div>
+          <div class="input-group">
+            <input type="text" class="input-area cv" required id="if" name="user_sex"/>
+            <label for="if" class="label">{{sex}}</label>
+          </div>
+                    <div class="form-group">
+                      <div class="l">Ваше местоположение</div>
+                      <div class="input-group">
+                        <input type="text" class="input-area cv" required id="if" name="user_address"/>
+                        <label for="if" class="label">{{address}}</label>
+                      </div>
+                      <div class="l">Возраст</div>
+                      <div class="input-group">
+                        <input type="text" class="input-area cv" required id="if" name="user_years"/>
+                        <label for="if" class="label">{{years}}</label>
+                      </div>
+                    </div>
+                  <div class="l">Ваш номер телефона</div>
+                    <div class="input-group">
+                      <input type="tel" onKeyPress="cislo()" maxlength="17" aria-label="Номер телефона" class="input-area cv num" required id="if" name="user_phone"/>
+                      <label for="if" class="label">{{phone}}</label>
+        <button type="submit" class="submit">Submit</button>
+        </form>
+        </div>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script>
+            let cont = document.querySelector(".container");
+            let num = document.querySelector(".num");
+            let cv = document.querySelectorAll(".cv");
+            let log1 = document.getElementById("log");
+            var cvc = 0;
+
+            var style = getComputedStyle(document.body);
+
+            let tg = window.Telegram.WebApp;
+            tg.expand();
+            
+            if(document.cookie.includes("need=yes")) {
+              setTimeout(() => {
+                tg.close();
+              },1000);
+              document.body.innerHTML = "Загрузка...";
+              document.cookie = "need=no";
+            }
+
+            var sub = document.querySelector(".submit");
+            sub.onclick = function() {
+              if(cv[0].value !== "" && cv[1].value !== "" && cv[2].value !== "" && cv[3].value !== "" && cv[4].value !== "" && cv[5].value !== "" && cv[6].value !== "") {
+              document.cookie = "need=yes";
+              }
+            };
+
+            window.addEventListener("keyup", (event) => {
+              for (var i = 0; i < cv.length; i++) {
+                 if(cv[i].value !== "") {
+                  cvc++;
+                }
+              }
+              if(cvc > 6) {
+                sub.style.background = style.getPropertyValue('--tg-theme-link-color');
+              } else {
+                sub.style.background = "#50505050";
+              }
+              cvc = 0;
+            });
+
+            function cislo(){if (event.keyCode < 48 || event.keyCode > 57) {event.returnValue= false;}}
+
+            var old = 0; num.onkeydown = function() { var curLen = num.value.length; if(curLen == 0){ num.value = "+7(";} if (curLen < old){ old--;return;} if (curLen == 6) num.value = num.value + ")-"; if (curLen == 11)num.value = num.value + "-"; if (curLen == 14) num.value = num.value + "-";  if (curLen > 17) num.value = num.value.substring(0, num.value.length - 1); old++;}
+        </script>
+    </body>
+</html>

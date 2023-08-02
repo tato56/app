@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ONE-TRAINING</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+body{
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+body, html{
+	height: 100%;
+}
+.item{
+	display: flex;
+	align-items: center;
+	border-bottom:  none;
+	padding: 5%;
+	background-color: var(--tg-theme-bg-color);
+	width: 100%;
+	height: calc(100% / 8);
+	border-bottom: 1px solid #7474744b;
+}
+.ht1{
+	width: 55px; 
+	height: 55px;
+	margin-right: 15px;
+}
+h6 {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.item:hover{
+	background-color: #7474744b;
+}
+.container{
+	width: 100%;
+	padding: 0;
+	height: 100%;
+}
+se {
+	background: yellow;
+}
+.search{
+	width: 100%;
+	display: flex;
+}
+.search2{
+	width: 100%;
+	border: none;
+	background: #80808050;
+	height: 50px;
+	padding-left: 2%;
+	outline: none !important;
+}
+.search1 {
+	width: 50px;
+	height: 50px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	background: #80808050;
+	outline: none !important;
+}
+</style>
+<body>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<div class="container">
+		<div class="search">
+			<input type="text" class="search2" placeholder="Поиск...">
+			<button class="search1"><img src="https://img.icons8.com/ios-glyphs/25/505050/search--v1.png"/></button>
+		</div>
+		{% for item in items %}
+		<div class="item">
+			<img class="ht1" src="{{ item['img_path'] }}">
+			<h6>{{ item.name }}</h6>
+		</div>
+        {% endfor %}
+		</div>
+		<script>
+			const item = document.querySelectorAll(".item");
+			const item1 = document.querySelectorAll(".item h6");
+			const search = document.querySelector(".search1");
+			const search2 = document.querySelector(".search2");
+
+			let tg = window.Telegram.WebApp;
+            tg.expand();
+			
+			let last = [];
+			
+			search.onclick = function() {
+				for(var i=0; i<item.length; i++) {
+						if(item1[i].textContent.includes(search2.value)) {
+							if(last.length !== 0){
+								item1[last[0]].innerHTML = last[1];					
+							}
+						let result = item1[i].textContent.replace(search2.value, "<se>" + search2.value + "</se>");
+						last = [i, item1[i].textContent];
+						item[i].scrollIntoView();
+						item1[i].innerHTML = result;
+						return;
+						}
+				}
+				};
+			if(location.pathname !== "/shop2") {
+			for(var i=0; i<item.length; i++) {
+				item[i].onclick = function() {
+				location.href = "/shop2";
+				};
+			}
+			} else {
+
+			}
+
+		</script>
+</body>
+</html>
+
+<!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> 
+style="height: 70px; margin-left: 100px; margin-bottom: 15px; width: 70px;"
+ margin-top: 15px; margin-left: 15px; 
+-->

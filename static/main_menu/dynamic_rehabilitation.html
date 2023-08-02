@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>DYNAMIC REHABILITATION</title>
+</head>
+<style>
+    body{
+        color: var(--tg-theme-text-color);
+        background: var(--tg-theme-bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    body, html{
+        height: 100%;
+    }
+    .title {
+        display: flex;
+        align-items: center;
+        border-bottom:  none;
+        padding: 5%;
+        background-color: var(--tg-theme-bg-color);
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    h5 {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .item{
+        display: flex;
+        align-items: center;
+        border-bottom:  none;
+        padding: 5%;
+        background-color: var(--tg-theme-bg-color);
+        width: 100%;
+        height: calc(100% / 8);
+        border-bottom: 1px solid #7474744b;
+    }
+    .ht1{
+        width: 55px; 
+        height: 55px;
+        margin-right: 15px;
+    }
+    h6 {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .item:hover{
+        background-color: #7474744b;
+    }
+    .container{
+        width: 100%;
+        padding: 0;
+        height: 100%;
+    }
+    ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    }
+    .ww1{
+        background-color: var(--tg-theme-bg-color);  
+    }
+    #back{
+        margin: 5%;
+        margin-left: 0;
+        background-color: #7e7d7d0e;
+        padding: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        border: 1px solid #74747441;
+        border-radius: 0px 360px 360px 0px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #back:hover{
+        background-color: #7e7d7d2b;  
+    }
+</style>
+<body>
+    <div class="ww1" style="width: 0; height: 0; overflow: hidden;">
+    <button id="back">
+        <img src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/left.png" style="width: 25px; height: 25px; margin-right: 8px;"/>
+        Назад</button>
+    <iframe id="w1" style="width: 100%; height: 100%; overflow: hidden;"></iframe>
+    </div>
+    
+    <div class="container">
+        <div class="title">
+            <h4>Динамическая реабилитаци я</h4>
+        </div>
+        <div class="title">
+            <p style="font-weight: 400; font-size: small;">
+                Здесь вы найдете для себя нужный комплекс упражнений на каждый день, который сможет решить вашу проблему. Метод Пташкина А.П. «Динамической реабилитации» основанный на использовании комплексов физических упражнений, особенностью которых является непрерывность и слаженность специальных упражнений, замкнутых между собой динамической последовательностью. 
+                Бот всегда подскажет как улучшить желаемый результат, подберет для вас инвентарь и закажет доставку, поможет составить план питания и при необходимости привлечь специалиста для решения этого вопроса.
+            </p>
+        </div>
+		<div class="item btn1">
+			<img class="ht1" src="../animate/head.gif">
+			<h6>Курс избавления от головной боли</h6>
+		</div>
+		<div class="item btn2">
+			<img class="ht1" src="../animate/pozvon.gif">
+			<h6>Курс при проблемах в шейном отделе позвоночника</h6>
+		</div>
+		<div class="item btn3">
+			<img class="ht1" src="../animate/pozvon.gif">
+			<h6>Курс при проблемах в грудном отделе позвоночника </h6>
+		</div>
+        <div class="item btn4">
+			<img class="ht1" src="../animate/pozvon.gif">
+			<h6>Курс при проблемах в поясничном отделе позвоночника</h6>
+		</div>
+        <div class="item btn5">
+			<img class="ht1" src="../animate/pozvon.gif">
+			<h6>Курс при проблемах в крестцовом отделе позвоночника и тазе</h6>
+		</div>
+        <div class="item btn6">
+			<img class="ht1" src="../animate/pozvon.gif">
+			<h6>Курс при проблемах в тазобедренных суставах</h6>
+		</div>
+        <div class="item btn7">
+			<img class="ht1" src="../animate/aler.gif">
+			<h6>Аллерголог-иммунолог</h6>
+		</div>
+        <div class="item btn8">
+			<img class="ht1" src="../animate/leg.gif">
+			<h6>Курс при проблемах в коленных суставах</h6>
+		</div>
+        <div class="item btn9">
+			<img class="ht1" src="../animate/hand.gif">
+			<h6>Курс при проблемах в плечевом суставе</h6>
+		</div>
+        <div class="item btn10">
+			<img class="ht1" src="../animate/leg.gif">
+			<h6>Курс при проблемах в голеностопных суставах</h6>
+		</div>
+        <div class="item btn11">
+			<img class="ht1" src="../animate/hand.gif">
+			<h6>Курс при проблемах в локтевых суставах и запястьях</h6>
+		</div>
+	</div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let course = "";
+        tg.expand();
+		var style = getComputedStyle(document.body);
+        tg.MainButton.textColor = style.getPropertyValue('--tg-theme-text-color');
+        tg.MainButton.color = style.getPropertyValue('--tg-theme-secondary-bg-color');
+        tg.MainButton.setText("Купить");
+        let cont = document.querySelector(".container");
+        let btn1 = document.querySelector(".btn1");
+        let btn2 = document.querySelector(".btn2");
+        let btn3 = document.querySelector(".btn3");
+        let btn4 = document.querySelector(".btn4");
+        let btn5 = document.querySelector(".btn5");
+        let btn6 = document.querySelector(".btn6");
+        let btn7 = document.querySelector(".btn7");
+        let btn8 = document.querySelector(".btn8");
+        let btn9 = document.querySelector(".btn9");
+        let btn10 = document.querySelector(".btn10");
+        let btn11 = document.querySelector(".btn11");
+
+        let back = document.querySelector("#back");
+        let win1 = document.querySelector("#w1");
+        let ww1 = document.querySelector(".ww1");
+        
+		btn1.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+			tg.MainButton.show();
+            win1.src = "/courses/hurt_head.html";
+            course = "buy_success Курс_избавления_от_головной_боли 15000 1";
+    	},false);
+
+        btn2.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_neak_spine.html";
+            course = "buy_success Курс_избавления_от_головной_боли 15000 1";
+    	},false);
+
+        btn3.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_breast.html";
+            course = "buy_success Курс_при_проблемах_в_грудном_отделе_позвоночника 15000 2";
+    	},false);
+
+        btn4.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_lumbar.html";
+            course = "4";
+    	},false);
+
+        btn5.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_sacral.html";
+            course = "5";
+    	},false);
+
+        btn6.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_pelvis.html";
+            course = "6";
+    	},false);
+
+        btn7.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/allergic.html";
+            course = "7";
+    	},false);
+
+        btn8.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_knees.html";
+            course = "8";
+    	},false);
+
+        btn9.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_shoulders.html";
+            course = "9";
+    	},false);
+
+        btn10.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_ankle.html";
+            course = "10";
+    	},false);
+
+        btn11.addEventListener("click", function(){
+            tg.expand();
+            ww1.style = "width: 100%; height: 100%; z-index:99; position: fixed; top: 0; left: 0;";
+		    tg.MainButton.show();
+            win1.src = "/courses/hurt_elbows.html";
+            course = "11";
+    	},false);
+
+        Telegram.WebApp.onEvent("mainButtonClicked", function(){
+            tg.disableClosingConfirmation()
+            tg.sendData(course);
+            tg.MainButton.setText("Загрузка");
+        });
+
+        back.addEventListener("click", function(){
+			tg.MainButton.hide();
+            ww1.style = "width: 0; height: 0; overflow: hidden;";
+		},false);
+        
+    </script>
+</body>
+</html>

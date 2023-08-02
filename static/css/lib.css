@@ -1,0 +1,141 @@
+body{
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+    font-family: sans-serif;
+}   
+.container{
+  padding: 5%;
+}
+.blck{
+    border: 1px solid #303030;
+    color: #13141425;
+}
+.f-c {
+    margin-bottom: 15px;
+    background: transparent;
+    height: 50px;
+}
+.logo{
+width: 40%;
+border-radius: 5px;
+}
+.penis2{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+.l{
+    margin-top: 5%;
+    margin-bottom: 7%;
+    font-size: large;
+    font-weight: bold;
+}
+.input-group {
+position: relative;
+width: 100%;
+}
+
+.input-group .input-area {
+outline: none;
+border: 2px solid #50505050;
+padding: 16px 13px;
+font-size: 14px;
+border-radius: 5px;
+background: transparent;
+color: var(--tg-theme-text-color);
+width: 100%;
+}
+
+.input-group .input-area:valid + .label {
+top: -8px;
+padding: 0 3px;
+font-size: 14px;
+color: #8d8d8d;
+}
+
+.input-group .input-area:focus {
+border: 2px solid var(--tg-theme-link-color);
+border-radius: 5px;
+}
+
+.input-group .label {
+color: #8d8d8d;
+position: absolute;
+top: 20px;
+left: 13px;
+background: var(--tg-theme-bg-color);
+pointer-events: none;
+}
+
+.input-group .input-area:focus + .label {
+top: -8px;
+padding: 0 3px;
+font-size: 14px;
+color: var(--tg-theme-link-color);
+}
+.input-group{
+margin-bottom: 5%;
+width: 100%;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #70707070;
+    border-radius: 100%;
+    background: #50505050;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: var(--tg-theme-link-color);
+    position: absolute;
+    border: 1px solid transparent;
+    top: 2px;
+    left: 2px;
+    border-radius: 100%;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.fcheck {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.submit{
+    background: #50505050;
+    margin-top: 5%;
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: var(--tg-theme-text-color);
+    border-radius: 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
